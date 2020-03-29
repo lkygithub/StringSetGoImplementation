@@ -1,8 +1,4 @@
-package main
-
-import (
-    "fmt"
-)
+package sets
 
 // An Empty struct does not take up any memory
 type Empty struct{}
@@ -84,8 +80,8 @@ func (s1 String) Intersection(s2 String) String {
 		for item := range s1 {
 			if s2.Has(item) {
 				res.Insert(item)
-            }
-        }
+			}
+		}
 	} else {
 		for item := range s2 {
 			if s1.Has(item) {
@@ -108,47 +104,3 @@ func (s String) List() []string {
 	return res
 }
 
-func main() {
-    s1 := NewString()
-
-    // Insert 1 item
-    s1.Insert("a")
-    fmt.Println(s1.List(), s1.Len())
-
-    // Insert several items
-    s1.Insert("a", "bb", "ccc", "dddd")
-    fmt.Println(s1.List(), s1.Len())
-
-    // Check for inclusion
-    fmt.Println(s1.Has("a"))
-    fmt.Println(s1.Has("aa"))
-
-    fmt.Println(s1.HasAll("bb", "ccc"))
-    fmt.Println(s1.HasAll("bbb", "ccc"))
-
-    fmt.Println(s1.HasAny("d", "dd", "ddd", "dddd"))
-    fmt.Println(s1.HasAny("d", "dd", "ddd"))
-
-    // Difference between s1 & s2
-    s2 := NewString("a", "bb", "eeeee")
-    fmt.Println(s1.Difference(s2))
-    fmt.Println(s2.Difference(s1))
-
-    // Union from S1 & s2
-    fmt.Println(s1.Difference(s2))
-    fmt.Println(s2.Difference(s1))
-
-    // Intersection between s1 & s2
-    fmt.Println(s1.Intersection(s2))
-    fmt.Println(s2.Intersection(s1))
-
-    // Delete 1 item
-    s1.Delete("bb")
-    fmt.Println(s1.List(), s1.Len())
-
-    // Delete several items
-    s1.Delete("a", "ccc", "dddd")
-    fmt.Println(s1.List(), s1.Len())
-
-
-}
