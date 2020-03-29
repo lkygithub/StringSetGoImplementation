@@ -113,11 +113,11 @@ func main() {
 
     // Insert 1 item
     s1.Insert("a")
-    fmt.Println(s1.List(),s1.Len())
+    fmt.Println(s1.List(), s1.Len())
 
     // Insert several items
     s1.Insert("a", "bb", "ccc", "dddd")
-    fmt.Println(s1.List(),s1.Len())
+    fmt.Println(s1.List(), s1.Len())
 
     // Check for inclusion
     fmt.Println(s1.Has("a"))
@@ -144,11 +144,11 @@ func main() {
 
     // Delete 1 item
     s1.Delete("bb")
-    fmt.Println(s1.List(),s1.Len())
+    fmt.Println(s1.List(), s1.Len())
 
     // Delete several items
     s1.Delete("a", "ccc", "dddd")
-    fmt.Println(s1.List(),s1.Len())
+    fmt.Println(s1.List(), s1.Len())
 
 
 }
